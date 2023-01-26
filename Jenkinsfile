@@ -98,7 +98,7 @@ pipeline{
                     ], 
                     credentialsId: 'c20d8ef3-e601-4d30-b22d-50796dee9209',
                      groupId: 'com.example', 
-                     nexusUrl: 'http://3.108.227.13:8081/', 
+                     nexusUrl: 'http://43.205.119.204:8081/', 
                      nexusVersion: 'nexus3', 
                      protocol: 'http',
                      repository: nexusRepo,
