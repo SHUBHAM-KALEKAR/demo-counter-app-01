@@ -79,32 +79,9 @@ pipeline{
             }
         }
 
-        stage('upload jar file to nexus'){
-
-            steps{
-
-                script{
-
-                   
-
-                    nexusArtifactUploader artifacts: 
-                    [
-                        [
-                            artifactId: 'springboot', 
-                            classifier: '', file: 'target/Uber.jar', type: 'jar'
-                            ]
-                    ], 
-                    credentialsId: 'c20d8ef3-e601-4d30-b22d-50796dee9209',
-                     groupId: 'com.example', 
-                     nexusUrl: 'http://43.205.119.204:8081/', 
-                     nexusVersion: 'nexus3', 
-                     protocol: 'http',
-                     repository: demoapp-release,
-                     version: "2.0.0"
-                }
-            }
+        
             
-        }
+    
 
         stage('dcoker image Build'){
 
