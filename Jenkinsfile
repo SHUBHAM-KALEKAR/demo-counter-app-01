@@ -89,9 +89,9 @@ pipeline{
 
                 script{
 
-                    sh 'docker image build -t $JOB_NAME:v1.$BUILD_ID .'
-                    sh 'docker image tag $JOB_NAME:v1.$BUILD_ID shubhamkalekar51/$JOB_NAME:v1.$BUILD_ID'
-                    sh 'docker image tag $JOB_NAME:v1.$BUILD_ID shubhamkalekar51/$JOB_NAME:v1.latest'
+                    sh 'sudo docker image build -t $JOB_NAME:v1.$BUILD_ID .'
+                    sh 'sudo docker image tag $JOB_NAME:v1.$BUILD_ID shubhamkalekar51/$JOB_NAME:v1.$BUILD_ID'
+                    sh ' sudo docker image tag $JOB_NAME:v1.$BUILD_ID shubhamkalekar51/$JOB_NAME:v1.latest'
 
                 }
             }
@@ -105,9 +105,9 @@ pipeline{
 
                     withCredentials([string(credentialsId: 'f5ea4ef1-5aa6-40ff-8717-8d20943518fa', variable: 'docker_cred')]) {
 
-                        sh "docker login -u shubhamkalekar51 -p ${docker_cred}"
-                          sh "docker image push shubhamkalekar51/$JOB_NAME:v1.$BUILD_ID"
-                          sh "docker image push shubhamkalekar51/$JOB_NAME:v1.latest"
+                        sh " sudo docker login -u shubhamkalekar51 -p ${docker_cred}"
+                          sh "sudo ocker image push shubhamkalekar51/$JOB_NAME:v1.$BUILD_ID"
+                          sh " sudo docker image push shubhamkalekar51/$JOB_NAME:v1.latest"
              
                   }
                 }
